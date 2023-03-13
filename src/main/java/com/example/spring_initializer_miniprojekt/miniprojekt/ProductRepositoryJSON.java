@@ -9,8 +9,7 @@ import org.springframework.stereotype.Component;
 
 import java.io.*;
 
-@Component
-
+@Component("CTJ")
 public class ProductRepositoryJSON implements ProductRepository {
     @Override
     public void parse() throws IOException {

@@ -6,4 +6,8 @@
   "name" : "Apple",
   "price" : 5.4,
   "quantity" : 15
+}, {
+  "name" : "Apple",
+  "price" : 5.4,
+  "quantity" : 15
 } ]

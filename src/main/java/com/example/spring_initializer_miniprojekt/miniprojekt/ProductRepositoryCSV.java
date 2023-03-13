@@ -2,9 +2,6 @@ package com.example.spring_initializer_miniprojekt.miniprojekt;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.apache.commons.csv.CSVFormat;
-import org.apache.commons.csv.CSVPrinter;
-import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
 import java.io.File;
@@ -14,16 +11,12 @@ import java.io.IOException;
 @Component("JTC")
 public class ProductRepositoryCSV implements ProductRepository {
 
-    public ProductRepositoryCSV() {
-        System.out.println("utworzenie product repositoryCSV");
-    }
     ObjectMapper objectMapper = new ObjectMapper();
 
     @Override
     public void parse() {
         FileWriter fileWriter = null;
         try {
-            System.out.println("jestem w metodzie pardowania na csv");
             JsonNode objects = objectMapper.readValue(new File("src/main/resources/product.json"), JsonNode.class);
             fileWriter = new FileWriter("src/main/resources/product.csv");
 //        CSVPrinter csvPrinter = new CSVPrinter(fileWriter, CSVFormat.DEFAULT.withHeader("name","price","quantity"));

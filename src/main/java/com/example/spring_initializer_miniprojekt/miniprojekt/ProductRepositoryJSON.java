@@ -4,7 +4,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.fasterxml.jackson.databind.node.JsonNodeFactory;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 import java.io.*;
@@ -12,14 +11,9 @@ import java.io.*;
 @Component("CTJ")
 public class ProductRepositoryJSON implements ProductRepository {
 
-    public ProductRepositoryJSON() {
-        System.out.println("utworzenie product repositoryJSON");
-    }
-
     @Override
-    public void parse() throws IOException {
+    public void parse(){
         try {
-            System.out.println("parsuje na JSON");
             BufferedReader csvReader = new BufferedReader(new FileReader("src/main/resources/product.csv"));
             ArrayNode productsArray = JsonNodeFactory.instance.arrayNode();
             String line;

@@ -11,17 +11,17 @@ public class ProductParsingController {
     ProductParsingService productParsingService;
     Scanner scanner = new Scanner(System.in);
     public ProductParsingController(ProductParsingService productParsingService) {
-        System.out.println("Jestem w ParsinController");
         this.productParsingService = productParsingService;
     }
     @PostConstruct
     public void chooseParsingDirection() throws IOException {
-        System.out.println("jestem w choseParsing");
-        System.out.println("1 - CSV to JSON");
-        System.out.println("2 - JSON to CSV");
-        int liczba = scanner.nextInt();
-        boolean choice = liczba == 1;
-        if(choice){
+        System.out.println("""
+                Choose file parsing direction:
+                1 - CSV to JSON"
+                2 - JSON to CSV
+                """);
+        int number = scanner.nextInt();
+        if(number == 1){
             productParsingService.productRepository1.parse();
         }else {
             productParsingService.productRepository2.parse();

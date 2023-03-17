@@ -9,13 +9,7 @@ import java.io.IOException;
 public class MiniprojektApplication {
 
 	public static void main(String[] args) throws IOException {
-//		ProductRepositoryCSV productRepositoryCSV = new ProductRepositoryCSV();
-//		ProductRepositoryJSON productRepositoryJSON = new ProductRepositoryJSON();
 		SpringApplication.run(MiniprojektApplication.class, args);
-
-
-//		productRepositoryCSV.parse();
-//		productRepositoryJSON.parse();
 	}
 
 }

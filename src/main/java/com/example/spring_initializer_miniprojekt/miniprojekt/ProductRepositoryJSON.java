@@ -31,7 +31,7 @@ public class ProductRepositoryJSON implements ProductRepository {
             ObjectMapper objectMapper = new ObjectMapper();
 //            objectMapper.writerWithDefaultPrettyPrinter().writeValue(new File("src/main/resources/product.json"), productsArray);
 
-            String timestamp = new SimpleDateFormat("yyyyMMdd-HHmmss").format(new Date());
+            String timestamp = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss").format(new Date());
             String fileName = "src/main/resources/product-out-" + timestamp + ".json";
             objectMapper.writerWithDefaultPrettyPrinter().writeValue(new File(fileName), productsArray);
 

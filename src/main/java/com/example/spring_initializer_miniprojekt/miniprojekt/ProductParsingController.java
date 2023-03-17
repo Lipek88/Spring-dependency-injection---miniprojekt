@@ -17,7 +17,7 @@ public class ProductParsingController {
     public void chooseParsingDirection() throws IOException {
         System.out.println("""
                 Choose file parsing direction:
-                1 - JSON to CSV"
+                1 - JSON to CSV
                 2 - CSV to JSON
                 """);
         int number = scanner.nextInt();

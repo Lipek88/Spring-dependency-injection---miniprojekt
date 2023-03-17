@@ -25,7 +25,7 @@ public class ProductRepositoryCSV implements ProductRepository {
             LocalDateTime now = LocalDateTime.now();
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd-HH-mm-ss");
             String timestamp = now.format(formatter);
-            fileWriter = new FileWriter("src/main/resources/product_" + timestamp + ".csv");
+            fileWriter = new FileWriter("src/main/resources/product-out-" + timestamp + ".csv");
 
 //        CSVPrinter csvPrinter = new CSVPrinter(fileWriter, CSVFormat.DEFAULT.withHeader("name","price","quantity"));
             for (JsonNode node : objects) {

@@ -1,13 +1,12 @@
-[ {
-  "name" : "Orange",
-  "price" : 10.2,
-  "quantity" : 4
-}, {
-  "name" : "Apple",
-  "price" : 5.4,
-  "quantity" : 15
-}, {
-  "name" : "Apple",
-  "price" : 5.4,
-  "quantity" : 15
-} ]
+[
+  {
+    "name": "Banana",
+    "price": 20.1,
+    "quantity": 4
+  },
+  {
+    "name": "Lemoen",
+    "price": 7.2,
+    "quantity": 5
+  }
+]

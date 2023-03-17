@@ -7,6 +7,8 @@ import com.fasterxml.jackson.databind.node.ObjectNode;
 import org.springframework.stereotype.Component;
 
 import java.io.*;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 @Component("CTJ")
 public class ProductRepositoryJSON implements ProductRepository {
@@ -27,8 +29,13 @@ public class ProductRepositoryJSON implements ProductRepository {
             }
             csvReader.close();
             ObjectMapper objectMapper = new ObjectMapper();
-            objectMapper.writerWithDefaultPrettyPrinter().writeValue(new File("src/main/resources/product.json"), productsArray);
-            System.out.println("Parsowanie na plik .json zakończone SUKCESEM");
+//            objectMapper.writerWithDefaultPrettyPrinter().writeValue(new File("src/main/resources/product.json"), productsArray);
+
+            String timestamp = new SimpleDateFormat("yyyyMMdd-HHmmss").format(new Date());
+            String fileName = "src/main/resources/product-out-" + timestamp + ".json";
+            objectMapper.writerWithDefaultPrettyPrinter().writeValue(new File(fileName), productsArray);
+
+            System.out.println("Parsowanie na plik .json zakończone SUKCESEM" + fileName);
         } catch (IOException e) {
             System.out.println("Parsowanie na plik .csv się nie powiodło");
         }
